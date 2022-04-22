@@ -6,7 +6,8 @@
         <entry key="app/src/main/res/drawable/edit_text.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/edittext_shape.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/save_button.xml" value="0.136" />
-        <entry key="app/src/main/res/layout/activity_add_news.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/activity_add_news.xml" value="0.21428571428571427" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.13385416666666666" />
       </map>
     </option>
   </component>

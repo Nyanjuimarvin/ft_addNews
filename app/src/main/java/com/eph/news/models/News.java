@@ -1,20 +1,25 @@
 package com.eph.news.models;
 
+import org.parceler.Parcel;
+
 import java.sql.Timestamp;
 
+@Parcel
 public class News {
 
     private String title;
     private String description;
     private Timestamp dateAdded;
-    private String index;
     private String pushId;
 
-    public News(String title, String description, Timestamp dateAdded, String index, String pushId) {
+    public News(){
+
+    }
+
+    public News(String title, String description, Timestamp dateAdded, String pushId) {
         this.title = title;
         this.description = description;
         this.dateAdded = dateAdded;
-        this.index = index;
         this.pushId = pushId;
     }
 
@@ -40,14 +45,6 @@ public class News {
 
     public void setDateAdded(Timestamp dateAdded) {
         this.dateAdded = dateAdded;
-    }
-
-    public String getIndex() {
-        return index;
-    }
-
-    public void setIndex(String index) {
-        this.index = index;
     }
 
     public String getPushId() {

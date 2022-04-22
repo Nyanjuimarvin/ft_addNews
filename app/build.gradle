@@ -1,5 +1,6 @@
 plugins {
     id 'com.android.application'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -8,12 +9,19 @@ android {
     defaultConfig {
         applicationId "com.eph.news"
         minSdk 19
-        targetSdk 32
+        targetSdk 31
         versionCode 1
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+
+    buildFeatures{
+        viewBinding{
+            enabled true
+        }
+    }
+
 
     buildTypes {
         release {
@@ -21,6 +29,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
@@ -35,4 +44,25 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    /*  Firebase */
+    // Bom
+    implementation platform('com.google.firebase:firebase-bom:29.2.1')
+
+    //SDK
+    implementation 'com.google.firebase:firebase-analytics'
+
+    //Database
+    implementation 'com.google.firebase:firebase-database'
+
+    //Authentication
+    implementation 'com.google.firebase:firebase-auth:21.0.3'
+    implementation 'com.firebaseui:firebase-ui-auth:7.2.0'
+    //Google play
+    implementation 'com.google.android.gms:play-services-auth:20.1.0'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    annotationProcessor 'org.parceler:parceler:1.1.12'
+    implementation 'org.parceler:parceler-api:1.1.12'
 }
+apply plugin: 'com.google.gms.google-services'

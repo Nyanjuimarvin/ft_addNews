@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.AddNewsActivity">
+    tools:context=".ui.AddNewsActivity"
+    tools:viewBindingIgnore="false">
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -20,11 +21,12 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fontFamily="@font/roboto_slab_bold"
+            android:fontFamily="@font/roboto_mono"
             android:gravity="center"
             android:text="Add News"
             android:textColor="#F91A0B"
             android:textSize="24sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
     </LinearLayout>
@@ -45,7 +47,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="-11dp"
             android:orientation="vertical">
 
             <TextView
@@ -76,10 +79,14 @@
                 android:id="@+id/TitleEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:autofillHints=""
                 android:background="@drawable/edittext_shape"
-                android:ems="30"
+                android:ems="10"
+                android:fontFamily="@font/roboto_mono"
+                android:hint="Title"
                 android:inputType="textPersonName"
-                android:text="Name" />
+                android:textSize="20sp"
+                tools:ignore="DuplicateSpeakableTextCheck" />
         </LinearLayout>
 
         <LinearLayout
@@ -102,52 +109,47 @@
                 android:textSize="20sp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="260dp"
+            android:layout_marginBottom="50dp"
+            android:orientation="vertical"
+            android:paddingStart="30dp"
+            android:paddingEnd="30dp">
+
+            <EditText
+                android:id="@+id/newsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:autofillHints=""
+                android:background="@drawable/edittext_shape"
+                android:ems="10"
+                android:fontFamily="@font/roboto_mono"
+                android:hint="Details"
+                android:inputType="textMultiLine"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/saveNewsBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/save_button"
+                android:fontFamily="@font/roboto_mono"
+                android:text="@string/save"
+                android:textColor="@color/white" />
+        </LinearLayout>
     </RelativeLayout>
 
-    <LinearLayout
-        android:id="@+id/linearLayout4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:gravity="center"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.547">
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/save_button"
-            android:fontFamily="@font/roboto_mono"
-            android:text="@string/save"
-            android:textColor="@color/white" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingStart="30dp"
-        android:paddingEnd="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
-        app:layout_constraintVertical_bias="0.133">
-
-        <EditText
-            android:id="@+id/newsEditText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/edittext_shape"
-            android:ems="10"
-            android:inputType="textMultiLine"
-            android:text="Name" />
-    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
